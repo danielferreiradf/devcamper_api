@@ -3,3 +3,4 @@ config/config.env
 
 # Folders
 node_modules/
+_data/
