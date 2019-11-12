@@ -9,17 +9,20 @@ const {
   bootcampPhotoUpload
 } = require("../controllers/BootcampsController");
 
+const Bootcamp = require("../models/Bootcamp");
+const advancedResults = require("../middleware/advancedResults");
+
 // @baseURL = /api/v1/bootcamps
 
 // Include other resource routers
-const courseRouter = require("./CoursesRoutes");
+const coursesRouter = require("./CoursesRoutes");
 
 // Re-route into other resource routers - forwarding
-router.use("/:bootcampId/courses", courseRouter);
+router.use("/:bootcampId/courses", coursesRouter);
 
 router
   .route("/")
-  .get(getBootcamps)
+  .get(advancedResults(Bootcamp, "courses"), getBootcamps)
   .post(createBootcamp);
 
 router

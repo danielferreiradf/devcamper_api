@@ -7,11 +7,19 @@ const {
   deleteCourse
 } = require("../controllers/CousesController");
 
+const Course = require("../models/Course");
+const advancedResults = require("../middleware/advancedResults");
 // @baseURL = /api/v1/courses
 
 router
   .route("/")
-  .get(getCourses)
+  .get(
+    advancedResults(Course, {
+      path: "bootcamp",
+      select: "name description"
+    }),
+    getCourses
+  )
   .post(addCourse);
 
 router
