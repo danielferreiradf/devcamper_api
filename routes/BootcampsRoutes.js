@@ -8,6 +8,8 @@ const {
   getBootcampsInRadius
 } = require("../controllers/BootcampsController");
 
+// @baseURL = /api/v1/bootcamps
+
 // Include other resource routers
 const courseRouter = require("./CoursesRoutes");
 
