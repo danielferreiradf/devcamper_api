@@ -11,7 +11,7 @@ const {
 // Include other resource routers
 const courseRouter = require("./CoursesRoutes");
 
-// Re-route into other resource routers
+// Re-route into other resource routers - forwarding
 router.use("/:bootcampId/courses", courseRouter);
 
 router
