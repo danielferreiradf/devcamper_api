@@ -10,6 +10,7 @@ dotenv.config({ path: "./config/config.env" });
 
 // Route Files
 const BootcampsRoutes = require("./routes/BootcampsRoutes");
+const CoursesRoutes = require("./routes/CoursesRoutes");
 
 // Express App
 const app = express();
@@ -27,6 +28,7 @@ if (process.env.NODE_ENV === "development") {
 
 // Routes
 app.use("/api/v1/bootcamps", BootcampsRoutes);
+app.use("/api/v1/courses", CoursesRoutes);
 
 // ErrorHandler Middleware
 app.use(errorHandler);
