@@ -6,7 +6,7 @@ const {
 } = require("../controllers/AuthController");
 
 // Protect route middleware
-const protect = require("../middleware/auth");
+const { protect } = require("../middleware/auth");
 
 // @baseURL = /api/v1/auth
 
