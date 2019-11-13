@@ -9,6 +9,10 @@ const {
 
 const Course = require("../models/Course");
 const advancedResults = require("../middleware/advancedResults");
+
+// Protect route middleware
+const protect = require("../middleware/auth");
+
 // @baseURL = /api/v1/courses
 
 router
@@ -20,12 +24,12 @@ router
     }),
     getCourses
   )
-  .post(addCourse);
+  .post(protect, addCourse);
 
 router
   .route("/:id")
   .get(getCourse)
-  .put(updateCourse)
-  .delete(deleteCourse);
+  .put(protect, updateCourse)
+  .delete(protect, deleteCourse);
 
 module.exports = router;
