@@ -13,6 +13,7 @@ dotenv.config({ path: "./config/config.env" });
 // Route Files
 const BootcampsRoutes = require("./routes/BootcampsRoutes");
 const CoursesRoutes = require("./routes/CoursesRoutes");
+const AuthRoutes = require("./routes/AuthRoutes");
 
 // Express App
 const app = express();
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Mount Routes
 app.use("/api/v1/bootcamps", BootcampsRoutes);
 app.use("/api/v1/courses", CoursesRoutes);
+app.use("/api/v1/auth", AuthRoutes);
 
 // ErrorHandler Middleware
 app.use(errorHandler);
