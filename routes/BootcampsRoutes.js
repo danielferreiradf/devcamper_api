@@ -10,7 +10,6 @@ const {
 } = require("../controllers/BootcampsController");
 
 const Bootcamp = require("../models/Bootcamp");
-const advancedResults = require("../middleware/advancedResults");
 
 // @baseURL = /api/v1/bootcamps
 
@@ -19,6 +18,7 @@ const coursesRouter = require("./CoursesRoutes");
 
 // Protect route middleware
 const { protect, authorize } = require("../middleware/auth");
+const advancedResults = require("../middleware/advancedResults");
 
 // Re-route into other resource routers - forwarding
 router.use("/:bootcampId/courses", coursesRouter);

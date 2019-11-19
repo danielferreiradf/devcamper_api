@@ -15,6 +15,7 @@ dotenv.config({ path: "./config/config.env" });
 const BootcampsRoutes = require("./routes/BootcampsRoutes");
 const CoursesRoutes = require("./routes/CoursesRoutes");
 const AuthRoutes = require("./routes/AuthRoutes");
+const UserRoutes = require("./routes/UsersRoutes");
 
 // Express App
 const app = express();
@@ -43,6 +44,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/v1/bootcamps", BootcampsRoutes);
 app.use("/api/v1/courses", CoursesRoutes);
 app.use("/api/v1/auth", AuthRoutes);
+app.use("/api/v1/users", UserRoutes);
 
 // ErrorHandler Middleware
 app.use(errorHandler);

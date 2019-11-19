@@ -119,7 +119,7 @@ exports.deleteCourse = asyncHandler(async (req, res, next) => {
 
   if (!course) {
     return next(
-      new ErrorResponse(`No course with the if of ${req.params.id}`, 404)
+      new ErrorResponse(`Course not found with the if of ${req.params.id}`, 404)
     );
   }
 
